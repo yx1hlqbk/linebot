@@ -2,7 +2,6 @@
 
 namespace Ianliao\Linebot\Supports;
 
-use Ianliao\Linebot\Exceptions\LineFormatException;
 use Ianliao\Linebot\Provider\LineProviderInterface;
 
 class Richmenu

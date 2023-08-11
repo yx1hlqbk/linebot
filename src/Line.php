@@ -11,6 +11,8 @@ use Ianliao\Linebot\Supports\Message;
 use Ianliao\Linebot\Supports\Audience;
 use Ianliao\Linebot\Supports\Insight;
 use Ianliao\Linebot\Supports\Users;
+use Ianliao\Linebot\Supports\Room;
+use Ianliao\Linebot\Supports\Richmenu;
 
 class Line
 {
@@ -30,7 +32,7 @@ class Line
     /*
      * Webhook settings
      */
-    public function webhook() : object
+    public function webhook() : \Ianliao\Linebot\Supports\Webhook
     {
         return new Webhook($this->provider);
     }
@@ -38,7 +40,7 @@ class Line
     /*
      * Getting content
      */
-    public function content() : object
+    public function content() : \Ianliao\Linebot\Supports\Content
     {
         return new Content($this->provider);
     }
@@ -46,7 +48,7 @@ class Line
     /*
      * Channel access token v2
      */
-    public function oauth2() : object
+    public function oauth2() : \Ianliao\Linebot\Supports\Oauth2
     {
         return new Oauth2($this->provider);
     }
@@ -54,7 +56,7 @@ class Line
     /*
      * Channel access token
      */
-    public function oauth() : object
+    public function oauth() : \Ianliao\Linebot\Supports\Oauth
     {
         return new Oauth($this->provider);
     }
@@ -62,7 +64,7 @@ class Line
     /*
      * Message
      */
-    public function message() : object
+    public function message() : \Ianliao\Linebot\Supports\Message
     {
         return new Message($this->provider);
     }
@@ -70,7 +72,7 @@ class Line
     /*
      * Managing Audience
      */
-    public function audience() : object
+    public function audience() : \Ianliao\Linebot\Supports\Audience
     {
         return new Audience($this->provider);
     }
@@ -78,7 +80,7 @@ class Line
     /*
      * Insight
      */
-    public function insight() : object
+    public function insight() : \Ianliao\Linebot\Supports\Insight
     {
         return new Insight($this->provider);
     }
@@ -86,9 +88,25 @@ class Line
     /*
      * Users
      */
-    public function users() : object
+    public function users() : \Ianliao\Linebot\Supports\Users
     {
         return new Users($this->provider);
+    }
+
+    /*
+     * Room
+     */
+    public function room() : \Ianliao\Linebot\Supports\Room
+    {
+        return new Room($this->provider);
+    }
+
+    /*
+     * Richmenu
+     */
+    public function richmenu() : \Ianliao\Linebot\Supports\Richmenu
+    {
+        return new Richmenu($this->provider);
     }
 
     /*
